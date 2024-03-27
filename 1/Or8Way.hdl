@@ -3,7 +3,7 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/1/Or8Way.hdl
 /**
- * 8-way Or gate: 
+ * 8-way Or gate:
  * out = in[0] Or in[1] Or ... Or in[7]
  */
 CHIP Or8Way {
@@ -11,5 +11,11 @@ CHIP Or8Way {
     OUT out;
 
     PARTS:
-    //// Replace this comment with your code.
+    Or(a=in[0], b=in[1], out=tmp);
+    Or(a=in[2], b=tmp, out=tmp0);
+    Or(a=in[3], b=tmp0, out=tmp1);
+    Or(a=in[4], b=tmp1, out=tmp2);
+    Or(a=in[5], b=tmp2, out=tmp3);
+    Or(a=in[6], b=tmp3, out=tmp4);
+    Or(a=in[7], b=tmp4, out=out);
 }
